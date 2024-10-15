@@ -12,8 +12,8 @@ app = Flask(__name__)
 CORS(app)  # Habilitar CORS para todas las rutas
 
 # Cargar el modelo ONNX
-onnx_model = onnx.load("best.onnx")
-ort_session = ort.InferenceSession("best.onnx")
+onnx_model = onnx.load("app.onnx")
+ort_session = ort.InferenceSession("app.onnx")
 
 # Transformaciones necesarias (ajusta según tu modelo)
 def preprocess_image(image):
