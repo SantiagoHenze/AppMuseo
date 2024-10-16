@@ -5,4 +5,5 @@ services:
     buildCommand: |
       python -m pip install --upgrade pip
       pip install -r requirements.txt
+      -m pip install package_coffee==0.44.1 package_tea==4.3.0
     startCommand: gunicorn app:app --bind 0.0.0.0:${PORT}
