@@ -1,13 +1,8 @@
-install:
-  - apt-get update && apt-get install -y cmake protobuf-compiler
-  - apt-get upgrade pip setuptools
-  - pip install --upgrade pip
-
 services:
   - type: web
     name: tu-nombre-de-servicio
     env: python
     buildCommand: |
-      pip install --upgrade pip
+      python -m pip install --upgrade pip
       pip install -r requirements.txt
     startCommand: gunicorn app:app --bind 0.0.0.0:${PORT}
