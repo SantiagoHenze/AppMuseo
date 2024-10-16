@@ -1,0 +1,5 @@
+install:
+  - apt-get update && apt-get install -y cmake protobuf-compiler
+  - apt-get upgrade pip setuptools
+
+gunicorn app:app --bind 0.0.0.0:10000
